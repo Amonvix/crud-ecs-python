@@ -1,6 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 700px;
+        margin: 40px auto;
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+        color: #333;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #007acc;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #005fa3;
+    }
+
+    hr {
+        margin: 30px 0;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        background: white;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .status {
+        font-size: 0.9em;
+        color: #777;
+    }
+</style>
+
     <title>Create Task</title>
 </head>
 <body>
@@ -20,5 +87,18 @@
 
         <button type="submit">Create Task</button>
     </form>
+    <hr>
+<h2>Existing Tasks</h2>
+<ul>
+    {% for task in tasks %}
+        <li>
+            <strong>{{ task.title }}</strong><br>
+            {{ task.description }}<br>
+    <span class="status">{{ task.status }}</span>
+        </li>
+    {% else %}
+        <li>No tasks found.</li>
+    {% endfor %}
+</ul>
 </body>
 </html>
