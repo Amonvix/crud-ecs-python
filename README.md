@@ -1,34 +1,26 @@
-# 📝 ToDo API – FastAPI + SQLite
+# 📋 crud-ecs-python
 
-A simple and clean RESTful API for managing tasks, built with FastAPI and SQLite. Designed to be modular, easy to understand, and ready to scale.
+Aplicação FastAPI para gerenciamento de tarefas, com interface web, API RESTful e empacotamento pronto para deploy em ambientes Docker e AWS ECS.
 
----
-
-## 🚀 Features
-
-- Create, read, update and delete tasks (CRUD)
-- Modular architecture (routers, schemas, models, CRUD)
-- SQLite database (can switch to PostgreSQL or others)
-- Clean code with full type annotations and docstrings
-- FastAPI auto-generated docs via Swagger UI
+> 💡 Projeto faz parte do conjunto de três microserviços preparados para serem implantados em uma infraestrutura automatizada com Terraform + AWS.
 
 ---
 
-## 🛠️ Technologies
+## 🚀 Tecnologias Utilizadas
 
-- Python 3.11+
-- FastAPI
-- SQLite + SQLAlchemy
-- Pydantic
-- Uvicorn (for development server)
+- 🐍 Python 3.12
+- ⚡ FastAPI
+- 🔧 Uvicorn
+- 🛢️ SQLite
+- 🧠 Jinja2 (Templates HTML)
+- 🐳 Docker
+- 🌩️ Pronto para deploy via AWS ECS
 
 ---
 
-## 📦 Installation
+## 📦 Como Rodar Localmente
 
+### Sem Docker:
 ```bash
-git clone https://github.com/your-username/todo_app.git
-cd todo_app
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
+uvicorn main:app --reload
